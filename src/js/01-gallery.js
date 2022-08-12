@@ -12,8 +12,6 @@ const imgCardMarkup = createGalleryMarkup(galleryItems);
 
 galleryContainer.insertAdjacentHTML('beforeend', imgCardMarkup);
 
-galleryContainer.addEventListener('click', onGalleryContainerClick);
-
 function createGalleryMarkup(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
@@ -35,13 +33,3 @@ const gallery = new SimpleLightbox('.gallery  a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
-
-function onGalleryContainerClick(evt) {
-  evt.preventDefault();
-  const imgNodeName = evt.target.nodeName;
-  if (!imgNodeName) {
-    return;
-  } else {
-    gallery;
-  }
-}
