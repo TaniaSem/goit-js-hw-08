@@ -18,6 +18,7 @@ function onFormSubmit(e) {
   e.preventDefault();
 
   e.currentTarget.reset();
+  feedbackFormData = {};
   localStorage.removeItem(STORAGE_KEY);
 }
 
@@ -31,7 +32,8 @@ function populateFormInputs() {
   const savedData = localStorage.getItem(STORAGE_KEY);
   if (savedData) {
     const parsedData = JSON.parse(savedData);
-    console.log(parsedData.email);
+    feedbackFormData = parsedData;
+    console.log(parsedData);
     if (parsedData.email) {
       refs.input.value = parsedData.email;
     }
